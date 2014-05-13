@@ -24,12 +24,13 @@ public class Pong extends JFrame{
      */
     public static void main(String[] args) {
         JFrame d = new Pong();
+        d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         d.setVisible(true);
         
     }
     public Pong(){
         setSize(500,500);
-        add(new Field());
+        add(new Field(this.getWidth(),this.getHeight()));
     }
 }
 
