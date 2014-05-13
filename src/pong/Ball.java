@@ -19,7 +19,7 @@ public class Ball {
     public Ball(int xl, int yl){
         xLoc = xl;
         yLoc = yl;
-        xVel = Math.random()*3;
+        xVel = Math.random()*6;
         yVel = Math.random()*3;
     }
     public void move(Player right, Player left){
@@ -34,12 +34,12 @@ public class Ball {
             yLoc = 500-(yLoc-500);
             yVel = -yVel;
         }
-        if(xLoc<15 && xLoc>12 && Math.abs(yLoc-right.getY())<50){
-            xLoc=10+(10-xLoc);
+        if(xLoc<=20 && xLoc>12 && Math.abs(yLoc-right.getY())<50){
+            xLoc=15+(15-xLoc);
             xVel=-xVel;
         }
-        if(xLoc>475 && xLoc<478 && Math.abs(yLoc-left.getY())<50){
-            xLoc=10+(10-xLoc);
+        if(xLoc>=475 && xLoc<478 && Math.abs(yLoc-left.getY())<50){
+            xLoc=475-(xLoc-475);
             xVel=-xVel;
         }
     }

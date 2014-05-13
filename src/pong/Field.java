@@ -43,23 +43,25 @@ public class Field extends JComponent implements Runnable{
         System.out.println("Running");
         while(true){
             b.move(p1, p2);
-            if(moving[0][0]){
-                p1.move(-1);
-                System.out.println("Moving p1 down!");
-            }
-                
-            if(moving[0][1]){
-                p1.move(1);
-                System.out.println("Moving p1 up!");
-            }
-            if(moving[1][0]){
-                p2.move(-1);
-                System.out.println("Moving p2 down!");
-            }
-            if(moving[1][1]){
-                p2.move(1);
-                System.out.println("Moving p2 up!");
-            }
+            p1.move(b.getY()-p1.getY());
+            p2.move(b.getY()-p2.getY());
+//            if(moving[0][0]){
+//                p1.move(-1);
+//                System.out.println("Moving p1 down!");
+//            }
+//                
+//            if(moving[0][1]){
+//                p1.move(1);
+//                System.out.println("Moving p1 up!");
+//            }
+//            if(moving[1][0]){
+//                p2.move(-1);
+//                System.out.println("Moving p2 down!");
+//            }
+//            if(moving[1][1]){
+//                p2.move(1);
+//                System.out.println("Moving p2 up!");
+//            }
             repaint();
             try {
                 Thread.sleep(10);
