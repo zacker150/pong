@@ -23,29 +23,24 @@ public class Ball {
         yVel = Math.random()*3;
     }
     public void move(Player right, Player left){
-        System.out.println(xLoc + "," + yLoc);
         xLoc+=xVel;
         yLoc +=yVel;
         
         if(yLoc<0){
             yLoc = Math.abs(yLoc);
             yVel = -yVel;
-            System.out.println("Y has bounced");
         }
         if(yLoc>500){
             yLoc = 500-(yLoc-500);
             yVel = -yVel;
-            System.out.println("Y has bounced");
         }
-        if(xLoc<15 && Math.abs(yLoc-right.getY())<50){
+        if(xLoc<15 && xLoc>12 && Math.abs(yLoc-right.getY())<50){
             xLoc=10+(10-xLoc);
             xVel=-xVel;
-            System.out.println("x has bounced");
         }
-        if(xLoc>475 && Math.abs(yLoc-left.getY())<50){
+        if(xLoc>475 && xLoc<478 && Math.abs(yLoc-left.getY())<50){
             xLoc=10+(10-xLoc);
             xVel=-xVel;
-            System.out.println("x has bounced");
         }
     }
     public void draw(Graphics2D g){
