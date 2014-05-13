@@ -13,24 +13,33 @@ import java.awt.Rectangle;
  * @author 542331
  */
 public class Player {
-    private int x; //x cordinate of top left corner
-    private int y; //y cordinate of top left corner
+    private int xloc; //x cordinate of center
+    private int yloc; //y cordinate of center
     private Color c;
     
     public Player(int x, int y){
-        this.x = x;
-        this.y = y;
+        this.xloc = x;
+        this.yloc = y;
         int r = (int)(Math.random()*256);
         int g = (int)(Math.random()*256);
         int b = (int)(Math.random()*256);
         c = new Color(r,g,b);
     }
     public void draw(Graphics2D g){
-        Rectangle r = new Rectangle(x,y-50,10,100);
+        Rectangle r = new Rectangle(xloc,yloc-50,10,100);
         Color old = g.getColor();
         g.setColor(c);
         g.fill(r);
         g.setColor(old);
         g.draw(r);
+    }
+    public int getX(){
+        return xloc;
+    }
+    public int getY(){
+        return yloc;
+    }
+    public void move(int x){
+        xloc+= x;
     }
 }
