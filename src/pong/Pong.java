@@ -25,7 +25,7 @@ public class Pong extends JFrame{
     public static void main(String[] args) {
         JFrame d = new Pong();
         d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        d.setVisible(true);
+        
         
     }
     public Pong(){
@@ -33,6 +33,10 @@ public class Pong extends JFrame{
         this.setSize(600, 600);
         Field f = new Field(500,500);
         add(f);
+        setVisible(true);
+        Thread t = new Thread(f);
+        t.start();
+        System.out.println("starting");
     }
 }
 
