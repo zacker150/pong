@@ -31,7 +31,8 @@ public class Pong extends JFrame{
     public Pong(){
         this.setLayout(null);
         this.setSize(600, 600);
-        add(new Field(500,500));
+        Field f = new Field(500,500);
+        add(f);
     }
 }
 

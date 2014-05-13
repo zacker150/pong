@@ -41,5 +41,9 @@ public class Player {
     }
     public void move(int y){
         yloc+= y;
+        if(yloc<50)
+            yloc = 50;
+        if(yloc>450)
+            yloc = 450;
     }
 }
