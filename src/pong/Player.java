@@ -39,7 +39,7 @@ public class Player {
     public int getY(){
         return yloc;
     }
-    public void move(int x){
-        xloc+= x;
+    public void move(int y){
+        yloc+= y;
     }
 }

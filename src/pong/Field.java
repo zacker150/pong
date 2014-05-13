@@ -6,6 +6,9 @@ package pong;
 
 import javax.swing.JComponent;
 import java.awt.*;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,6 +31,22 @@ public class Field extends JComponent{
         g2.draw(new Rectangle(0,0,this.getWidth()-1,this.getHeight()-1));
         p1.draw(g2);
         p2.draw(g2);
-        while(p1.)
+        Random rand = new Random();
+        int count = 0;
+        while(p1.getY()>50 && p1.getY()<this.getHeight()-50){
+            count++;
+            int x = rand.nextInt(5);
+            if(rand.nextBoolean())
+                x=-x;
+            p1.move(x);
+            System.out.println(count + "     " +p1.getY());
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Field.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.repaint();
+            
+        }
     }
 }
