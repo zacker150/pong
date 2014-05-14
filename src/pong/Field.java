@@ -46,35 +46,39 @@ public class Field extends JComponent implements Runnable{
         b = new Ball(this.getWidth()/2,this.getHeight()/2);
         moving = new boolean[2][2];
     }
+    /*
+     * The main loop of the game.
+     */
     public void run(){
         System.out.println("Running");
         System.out.println(this.requestFocus(false));
         while(true){
-            b.move(p1, p2);
+            b.move(p1, p2); //moves the ball
 //            p1.move(b.getY()-p1.getY());
 //            p2.move(b.getY()-p2.getY());
             if(moving[0][0]){
-                p1.move(-5);
-                System.out.println("Moving p1 down!");
-            }
-                
+                p1.move(-5);//moves Player 1 up 5
+            }                
             if(moving[0][1]){
-                p1.move(5);
-                System.out.println("Moving p1 up!");
+                p1.move(5);//moves Player 1 down 5
             }
             if(moving[1][0]){
-                p2.move(-5);
-                System.out.println("Moving p2 up!");
+                p2.move(-5);//moves Player 2 up 5
             }
             if(moving[1][1]){
-                p2.move(5);
-                System.out.println("Moving p2 down!");
+                p2.move(5);//moves Player 2 down 5
             }
             repaint();
             try {
                 Thread.sleep(10);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Field.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if(b.getX() <5){
+                reset();
+            }
+            if(b.getX()>495){
+                reset();
             }
         }
     }
