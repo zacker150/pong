@@ -24,6 +24,7 @@ public class Pong extends JFrame{
      */
     public static void main(String[] args) {
         JFrame d = new Pong();
+        d.setAlwaysOnTop(true);
         d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         

@@ -19,15 +19,21 @@ public class Ball {
     public Ball(int xl, int yl){
         xLoc = xl;
         yLoc = yl;
-        xVel = Math.random()*6;
+        xVel = Math.random()*3;
+        if(Math.abs(xVel)<1){
+            if(xVel>0)
+                xVel++;
+            if(xVel<0)
+                xVel--;
+        }
         yVel = Math.random()*3;
     }
     public void move(Player right, Player left){
         xLoc+=xVel;
         yLoc +=yVel;
         
-        if(yLoc<0){
-            yLoc = Math.abs(yLoc);
+        if(yLoc<5){
+            yLoc = 5+(5-yLoc);
             yVel = -yVel;
         }
         if(yLoc>500){
@@ -35,12 +41,16 @@ public class Ball {
             yVel = -yVel;
         }
         if(xLoc<=20 && xLoc>12 && Math.abs(yLoc-right.getY())<50){
-            xLoc=15+(15-xLoc);
+            xLoc=20+(20-xLoc);
+            if(xLoc<20)
+                xLoc = 20;
             xVel=-xVel;
+            System.out.println("hit right paddle");
         }
         if(xLoc>=475 && xLoc<478 && Math.abs(yLoc-left.getY())<50){
             xLoc=475-(xLoc-475);
             xVel=-xVel;
+            System.out.println("hit left paddle");
         }
     }
     public void draw(Graphics2D g){
