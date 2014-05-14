@@ -89,11 +89,9 @@ public class Field extends JComponent implements Runnable{
             }
             if(e.getKeyCode()==KeyEvent.VK_UP){
                 moving[1][0]= true;
-                System.out.println("UP key pressed!");
             }
             else if(e.getKeyCode()==KeyEvent.VK_DOWN){
                 moving[1][1] = true;
-                System.out.println("DOWN key pressed!");
             }
                 
         }
