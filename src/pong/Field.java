@@ -54,12 +54,12 @@ public class Field extends JComponent implements Runnable{
 //            p1.move(b.getY()-p1.getY());
 //            p2.move(b.getY()-p2.getY());
             if(moving[0][0]){
-                p1.move(-1);
+                p1.move(-5);
                 System.out.println("Moving p1 down!");
             }
                 
             if(moving[0][1]){
-                p1.move(1);
+                p1.move(5);
                 System.out.println("Moving p1 up!");
             }
             if(moving[1][0]){
