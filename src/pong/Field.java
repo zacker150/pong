@@ -48,18 +48,19 @@ public class Field extends JComponent implements Runnable{
     }
     public void run(){
         System.out.println("Running");
-        System.out.println(this.requestFocus(false));
+        
         while(true){
+            requestFocus();
             b.move(p1, p2);
 //            p1.move(b.getY()-p1.getY());
 //            p2.move(b.getY()-p2.getY());
             if(moving[0][0]){
-                p1.move(-1);
+                p1.move(-5);
                 System.out.println("Moving p1 down!");
             }
                 
             if(moving[0][1]){
-                p1.move(1);
+                p1.move(5);
                 System.out.println("Moving p1 up!");
             }
             if(moving[1][0]){
@@ -72,7 +73,7 @@ public class Field extends JComponent implements Runnable{
             }
             repaint();
             try {
-                Thread.sleep(10);
+                Thread.sleep(20);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Field.class.getName()).log(Level.SEVERE, null, ex);
             }
