@@ -53,6 +53,7 @@ public class Field extends JComponent implements Runnable {
         p2 = new Player(this.getWidth() - 20, this.getHeight() / 2);
         b = new Ball(this.getWidth() / 2, this.getHeight() / 2);
         moving = new boolean[2][2];
+        repaint();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
@@ -68,8 +69,8 @@ public class Field extends JComponent implements Runnable {
     }
     public void run() {
         System.out.println("Running");
-        System.out.println(this.requestFocus(false));
         while (true) {
+            requestFocus(false);
             b.move(p1, p2); //moves the ball
 //            p1.move(b.getY()-p1.getY());
 //            p2.move(b.getY()-p2.getY());

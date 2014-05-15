@@ -47,13 +47,11 @@ public class Ball {
             if(xLoc<20)
                 xLoc = 20;
             xVel=-xVel;
-            System.out.println("hit right paddle");
         }
         //bounces off the left Paddle
         if(xLoc>=475 && xLoc<478 && Math.abs(yLoc-left.getY())<50){
             xLoc=475-(xLoc-475);
             xVel=-xVel;
-            System.out.println("hit left paddle");
         }
     }
     public void draw(Graphics2D g){
