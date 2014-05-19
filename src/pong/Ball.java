@@ -28,9 +28,11 @@ public class Ball {
         }
         yVel = Math.random()*3;
     }
+   
     public void move(Player right, Player left){
         xLoc+=xVel;
         yLoc +=yVel;
+        
         //bounces off the top of the playing field
         if(yLoc<5){
             yLoc = 5+(5-yLoc);
@@ -42,14 +44,15 @@ public class Ball {
             yVel = -yVel;
         }
         //bounces off the right Paddle
-        if(xLoc<=20 && xLoc>12 && Math.abs(yLoc-right.getY())<50){
-            xLoc=20+(20-xLoc);
+        if(xLoc<=15 && xLoc>5 && Math.abs(yLoc-right.getY())<50){
+            xLoc=15+(15-xLoc);
             if(xLoc<20)
                 xLoc = 20;
             xVel=-xVel;
+
         }
         //bounces off the left Paddle
-        if(xLoc>=475 && xLoc<478 && Math.abs(yLoc-left.getY())<50){
+        if(xLoc>=475 && xLoc<485 && Math.abs(yLoc-left.getY())<50){
             xLoc=475-(xLoc-475);
             xVel=-xVel;
         }
