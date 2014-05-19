@@ -49,7 +49,6 @@ public class Ball {
             if(xLoc<20)
                 xLoc = 20;
             xVel=-xVel;
-
         }
         //bounces off the left Paddle
         if(xLoc>=475 && xLoc<485 && Math.abs(yLoc-left.getY())<50){
