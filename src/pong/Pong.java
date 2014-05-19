@@ -24,7 +24,7 @@ public class Pong extends JFrame{
      */
     public static void main(String[] args) {
         JFrame d = new Pong();
-        d.setTitle("Pong v1.1 by Victor Zeng");
+        d.setTitle("Pong v1.2 by Victor Zeng");
         d.setAlwaysOnTop(true);
         d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
     }
@@ -34,11 +34,13 @@ public class Pong extends JFrame{
         Field f = new Field(10,30);
         //creates the scorebar;
         ScoreBar bar = f.getScoreBar();
-        bar.setBounds(10, 2, 400, 20);
+        bar.setBounds(10, 2, 300, 20);
         add(f);
         add(bar);
         //adds reset button
-        
+        JButton reset = bar.getReset();
+        reset.setBounds(320,2,190,20);
+        add(reset);
         setVisible(true);
         Thread t = new Thread(f);
         t.start();

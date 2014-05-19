@@ -88,7 +88,7 @@ public class Field extends JComponent implements Runnable {
             }
             repaint();
             try {
-                Thread.sleep(20);
+                Thread.sleep(10);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Field.class.getName()).log(Level.SEVERE, null, ex);
             }
