@@ -5,6 +5,8 @@
 package pong;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JComponent;
 
 /**
@@ -36,6 +38,13 @@ public class ScoreBar extends JComponent{
     public void increment2(){
         score2++;
         repaint();
+    }
+    class ResetListener implements ActionListener{
+        public void actionPerformed(ActionEvent ae) {
+            score1=0;
+            score2=0;
+            repaint();
+        }
     }
     
 }

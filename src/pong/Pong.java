@@ -32,10 +32,13 @@ public class Pong extends JFrame{
         this.setLayout(null);
         this.setSize(600, 600);
         Field f = new Field(10,30);
+        //creates the scorebar;
         ScoreBar bar = f.getScoreBar();
-        bar.setBounds(2, 2, 500, 20);
+        bar.setBounds(10, 2, 400, 20);
         add(f);
         add(bar);
+        //adds reset button
+        
         setVisible(true);
         Thread t = new Thread(f);
         t.start();
