@@ -26,7 +26,7 @@ public class Pong extends JFrame{
      */
     public static void main(String[] args) {
         JFrame d = new Pong();
-        d.setTitle("Pong v1.3 by Victor Zeng");
+        d.setTitle("Pong v2.0 by Victor Zeng");
         d.setAlwaysOnTop(true);
         d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
     }
