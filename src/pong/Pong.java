@@ -49,10 +49,13 @@ public class Pong extends JFrame{
         pause.addActionListener(new Pause(pause,f));
         add(pause);
         setVisible(true);
+        f.pause();
+        int x = JOptionPane.showConfirmDialog(this, "Controls:\nW: Move player 1 up\nS:Move player 1 down\nUp:Move player 2 up\nDown:Move player 2 down");
+        f.pause();
         Thread t = new Thread(f);
         t.start();
         System.out.println("starting");
-        JOptionPane.showMessageDialog(this, "Controls:\nW: Move player 1 up\nS:Move player 1 down\nUp:Move player 2 up\nDown:Move player 2 down");
+        
     }
 }
 class Pause implements ActionListener{
