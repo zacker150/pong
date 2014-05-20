@@ -6,11 +6,14 @@ package pong;
 
 import javax.swing.JComponent;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 
 /**
  *
@@ -72,6 +75,13 @@ public class Field extends JComponent implements Runnable {
     public void run() {
         System.out.println("Running");
         while (true) {
+            while(paused){
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Field.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             requestFocus(false);
             b.move(p1, p2); //moves the ball
 //            p1.move(b.getY()-p1.getY());
@@ -139,5 +149,25 @@ public class Field extends JComponent implements Runnable {
                 moving[1][1] = false;
             }
         }
+    }
+    
+    class Pause implements ActionListener{
+        
+        JButton button;
+        
+        public Pause(JButton b){
+            button = b;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            paused = !paused;
+            if(paused)
+                button.setText("Unpause");
+            else
+                button.setText("Pause");
+            }
+        }
+        
     }
 }
