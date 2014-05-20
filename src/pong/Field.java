@@ -150,22 +150,6 @@ public class Field extends JComponent implements Runnable {
             }
         }
     }
+   
     
-    class Pause implements ActionListener{
-        
-        JButton button;
-        
-        public Pause(JButton b){
-            button = b;
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            paused = !paused;
-            if(paused)
-                button.setText("Unpause");
-            else
-                button.setText("Pause");
-        }
-    }
 }

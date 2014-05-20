@@ -41,6 +41,9 @@ public class Pong extends JFrame{
         JButton reset = bar.getReset();
         reset.setBounds(320,2,190,20);
         add(reset);
+        //adds pause button
+        JButton pause = new JButton("Pause");
+        pause.addActionListener(new f.Pause(pause));
         setVisible(true);
         Thread t = new Thread(f);
         t.start();
