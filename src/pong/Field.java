@@ -18,19 +18,20 @@ import java.util.logging.Logger;
  */
 public class Field extends JComponent implements Runnable {
 
-    private Player p1;
-    private Player p2;
-    private Ball b;
-    private boolean[][] moving;
-    private ScoreBar score;
+    private Player p1; // player on the right
+    private Player p2; // player on the left
+    private Ball b; // I wonder what this is 
+    private boolean[][] moving; //array to determine 
+    private ScoreBar score; //the scorebar
+    private boolean paused; // is the gamie paused
 
     public Field(int x, int y) {
         int width = 500;
         int hight = 500;
         this.setBounds(x, y, width, hight);
         p1 = new Player(10, hight / 2);
-        p2 = new Player(width - 20, hight / 2);
-        b = new Ball(width / 2, hight / 2);
+        p2 = new Player(width - 20, hight / 2); 
+        b = new Ball(width / 2, hight / 2); // sets ball at center of field
         moving = new boolean[2][2];
         this.addKeyListener(new Control());
         score = new ScoreBar();
@@ -45,6 +46,10 @@ public class Field extends JComponent implements Runnable {
         b.draw(g2);
     }
     
+    
+    public ScoreBar getScoreBar(){
+        return score;
+    }
     /*
      *resets the field for the next game.
      */
@@ -60,13 +65,10 @@ public class Field extends JComponent implements Runnable {
             Logger.getLogger(Field.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     /*
      * The main loop of the game.
      */
-
-    public ScoreBar getScoreBar(){
-        return score;
-    }
     public void run() {
         System.out.println("Running");
         while (true) {

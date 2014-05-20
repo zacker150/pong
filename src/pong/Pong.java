@@ -30,7 +30,7 @@ public class Pong extends JFrame{
     }
     public Pong(){
         this.setLayout(null);
-        this.setSize(600, 600);
+        this.setSize(550, 575);
         Field f = new Field(10,30);
         //creates the scorebar;
         ScoreBar bar = f.getScoreBar();

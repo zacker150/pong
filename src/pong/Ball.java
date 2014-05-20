@@ -28,7 +28,19 @@ public class Ball {
         }
         yVel = Math.random()*3;
     }
-   
+    public void accelerate(){
+        double acceleration = .1;
+        if(xVel<0)
+            xVel-=acceleration;
+        if(xVel>0)
+            xVel+=acceleration;
+        if(yVel<0)
+            yVel-=acceleration;
+        if(yVel>0)
+            yVel+=acceleration;
+        System.out.println(xVel + " " + yVel);
+        
+    }
     public void move(Player right, Player left){
         xLoc+=xVel;
         yLoc +=yVel;
@@ -44,16 +56,18 @@ public class Ball {
             yVel = -yVel;
         }
         //bounces off the right Paddle
-        if(xLoc<=15 && xLoc>5 && Math.abs(yLoc-right.getY())<50){
-            xLoc=15+(15-xLoc);
+        if(xLoc<=20 && xLoc>5 && Math.abs(yLoc-right.getY())<50){
+            xLoc=20+(20-xLoc);
             if(xLoc<20)
                 xLoc = 20;
             xVel=-xVel;
+            accelerate();
         }
         //bounces off the left Paddle
         if(xLoc>=475 && xLoc<485 && Math.abs(yLoc-left.getY())<50){
             xLoc=475-(xLoc-475);
             xVel=-xVel;
+            accelerate();
         }
     }
     public void draw(Graphics2D g){
