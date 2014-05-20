@@ -114,6 +114,15 @@ public class Field extends JComponent implements Runnable {
             }
         }
     }
+    /*
+     * Pauses the game of pong
+     */
+    public void pause(){
+        paused = !paused;
+    }
+    public boolean paused(){
+        return paused;
+    }
 
     class Control implements KeyListener {
 

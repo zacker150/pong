@@ -4,6 +4,8 @@ package pong;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
 import javax.swing.*;
 
@@ -30,7 +32,7 @@ public class Pong extends JFrame{
     }
     public Pong(){
         this.setLayout(null);
-        this.setSize(550, 575);
+        this.setSize(550, 600);
         Field f = new Field(10,30);
         //creates the scorebar;
         ScoreBar bar = f.getScoreBar();
@@ -43,12 +45,34 @@ public class Pong extends JFrame{
         add(reset);
         //adds pause button
         JButton pause = new JButton("Pause");
-        pause.addActionListener(new f.Pause(pause));
+        pause.setBounds(10,535,500,20);
+        pause.addActionListener(new Pause(pause,f));
+        add(pause);
         setVisible(true);
         Thread t = new Thread(f);
         t.start();
         System.out.println("starting");
+        JOptionPane.showMessageDialog(this, "Controls:\nW: Move player 1 up\nS:Move player 1 down\nUp:Move player 2 up\nDown:Move player 2 down");
     }
 }
+class Pause implements ActionListener{
+        
+        JButton button;
+        Field f;
+        
+        public Pause(JButton b, Field f){
+            button = b;
+            this.f = f;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            f.pause();
+            if(f.paused())
+                button.setText("Unpause");
+            else
+                button.setText("Pause");
+        }
+    }
 
 
