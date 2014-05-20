@@ -166,8 +166,7 @@ public class Field extends JComponent implements Runnable {
                 button.setText("Unpause");
             else
                 button.setText("Pause");
-            }
+            
         }
-        
     }
 }
