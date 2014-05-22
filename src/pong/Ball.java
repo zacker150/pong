@@ -5,6 +5,7 @@
 package pong;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 /**
  *
@@ -71,11 +72,18 @@ public class Ball {
         }
     }
     public void draw(Graphics2D g){
-        g.fillOval((int)xLoc-5, (int)yLoc-5, 10, 10);
+        Ellipse2D.Double ell = new Ellipse2D.Double(xLoc-5,yLoc-5,10,10);
+        g.fill(ell);
     }
+    /*
+     * Returns the X cordinate of the ceter 
+     */
     public int getX(){
         return (int)xLoc;
     }
+    /*
+     * Returns the Y cordinate of the ceter 
+     */
     public int getY(){
         return (int)yLoc;
     }

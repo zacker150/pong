@@ -31,13 +31,14 @@ public class Pong extends JFrame{
         d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
     }
     public Pong(){
-        this.setLayout(null);
+        this.setLayout(null); //allows me to place compoents anywhere
         this.setSize(550, 600);
+        //creates the field
         Field f = new Field(10,30);
+        add(f);
         //creates the scorebar;
         ScoreBar bar = f.getScoreBar();
         bar.setBounds(10, 2, 300, 20);
-        add(f);
         add(bar);
         //adds reset button
         JButton reset = bar.getReset();
@@ -48,11 +49,14 @@ public class Pong extends JFrame{
         pause.setBounds(10,535,500,20);
         pause.addActionListener(new Pause(pause,f));
         add(pause);
+        //shows the frame now that it's set up. 
         setVisible(true);
+        //Pauses the game and dispays the instructions.
         f.pause();
         int x = JOptionPane.showConfirmDialog(this, "Controls:\nW: Move player 1 up\nS:Move player 1 down\nUp:Move player 2 up\nDown:Move player 2 down");
-        f.pause();
-        Thread t = new Thread(f);
+        f.pause(); //unpause
+        //starts the main loop of the game.
+        Thread t = new Thread(f); 
         t.start();
         System.out.println("starting");
         
@@ -71,6 +75,7 @@ class Pause implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             f.pause();
+            //changes the text of the button.
             if(f.paused())
                 button.setText("Unpause");
             else

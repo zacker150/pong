@@ -49,7 +49,9 @@ public class Field extends JComponent implements Runnable {
         b.draw(g2);
     }
     
-    
+    /*
+     * Returns a scorebar that tracks the score for this Field
+     */
     public ScoreBar getScoreBar(){
         return score;
     }
@@ -60,7 +62,6 @@ public class Field extends JComponent implements Runnable {
         p1 = new Player(10, this.getHeight() / 2);
         p2 = new Player(this.getWidth() - 20, this.getHeight() / 2);
         b = new Ball(this.getWidth() / 2, this.getHeight() / 2);
-        moving = new boolean[2][2];
         repaint();
         try {
             Thread.sleep(1000);
