@@ -114,11 +114,15 @@ public class Field extends JComponent implements Runnable {
         }
     }
     /*
-     * Pauses the game of pong
+     * If the game is un-paused, pauses the game. 
+     * If it is paused, un-pause the game. 
      */
     public void pause(){
         paused = !paused;
     }
+    /*
+     * Returns if the game is paused
+     */
     public boolean paused(){
         return paused;
     }
