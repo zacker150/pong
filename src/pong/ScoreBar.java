@@ -46,6 +46,7 @@ public class ScoreBar extends JComponent{
         return reset;
     }
     class ResetListener implements ActionListener{
+        @Override
         public void actionPerformed(ActionEvent ae) {
             score1=0;
             score2=0;

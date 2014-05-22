@@ -84,8 +84,6 @@ public class Field extends JComponent implements Runnable {
             }
             requestFocus(false);
             b.move(p1, p2); //moves the ball
-//            p1.move(b.getY()-p1.getY());
-//            p2.move(b.getY()-p2.getY());
             if (moving[0][0]) {
                 p1.move(-5);//moves Player 1 up 5
             }
