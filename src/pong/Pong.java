@@ -65,7 +65,7 @@ public class Pong extends JFrame{
 class Pause implements ActionListener{
         
         JButton button;
-        Field f;
+        Field f;//The field this controls
         
         public Pause(JButton b, Field f){
             button = b;
