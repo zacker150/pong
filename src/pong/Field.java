@@ -43,15 +43,16 @@ public class Field extends JComponent implements Runnable {
         p1.draw(g2);
         p2.draw(g2);
         b.draw(g2);
+        
     }
     
-    /*
-     * Returns a scorebar that tracks the score for this Field
+    /**
+     * @return a ScoreBar that tracks the score for this Field
      */
     public ScoreBar getScoreBar(){
         return score;
     }
-    /*
+    /**
      *resets the field for the next game.
      */
     public void reset() {
@@ -66,7 +67,7 @@ public class Field extends JComponent implements Runnable {
         }
     }
     
-    /*
+    /**
      * The main loop of the game.
      */
     public void run() {
@@ -109,15 +110,15 @@ public class Field extends JComponent implements Runnable {
             }
         }
     }
-    /*
+    /**
      * If the game is un-paused, pauses the game. 
      * If it is paused, un-pause the game. 
      */
     public void pause(){
         paused = !paused;
     }
-    /*
-     * Returns if the game is paused
+    /**
+     * @return true if the game is paused false if it isn't
      */
     public boolean paused(){
         return paused;

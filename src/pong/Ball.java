@@ -29,6 +29,9 @@ public class Ball {
         }
         yVel = Math.random()*3;
     }
+    /**
+     * Accelerates the ball by .1414 pixels per frame
+     */
     public void accelerate(){
         double acceleration = .1;
         if(xVel<0)
@@ -42,6 +45,11 @@ public class Ball {
         System.out.println(xVel + " " + yVel);
         
     }
+    /**
+     * Moves the ball, taking into account the bouncing. 
+     * @param right the player on the right side of the field
+     * @param left  the player on the left side of the field
+     */
     public void move(Player right, Player left){
         xLoc+=xVel;
         yLoc +=yVel;
@@ -71,18 +79,24 @@ public class Ball {
             accelerate();
         }
     }
+    /**
+     * Draws the ball
+     * @param g The graphics object to draw it to
+     */
     public void draw(Graphics2D g){
         Ellipse2D.Double ell = new Ellipse2D.Double(xLoc-5,yLoc-5,10,10);
         g.fill(ell);
     }
-    /*
-     * Returns the X cordinate of the ceter 
+    /**
+     * 
+     * @return the x-coordinate of the center rounded to the nearest integer. 
      */
     public int getX(){
         return (int)xLoc;
     }
-    /*
-     * Returns the Y cordinate of the ceter 
+    /**
+     * 
+     * @return  the y-coordinate of the center rounded to the nearest integer.
      */
     public int getY(){
         return (int)yLoc;
