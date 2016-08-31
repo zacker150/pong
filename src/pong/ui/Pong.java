@@ -1,4 +1,4 @@
-package pong;
+package pong.ui;
 
 
 import pong.ui.Field;
