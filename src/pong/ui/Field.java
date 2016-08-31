@@ -2,14 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package pong;
+package pong.ui;
 
+import pong.ui.ScoreBar;
 import javax.swing.JComponent;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import pong.Ball;
+import pong.Player;
 
 /**
  *

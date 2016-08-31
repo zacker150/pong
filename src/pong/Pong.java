@@ -1,6 +1,8 @@
 package pong;
 
 
+import pong.ui.Field;
+import pong.ui.ScoreBar;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
