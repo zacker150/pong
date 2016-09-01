@@ -23,7 +23,7 @@ public class Field extends JComponent implements Runnable {
     private Player p1; // player on the right
     private Player p2; // player on the left
     private Ball b; // I wonder what this is 
-    private boolean[][] moving; //array to determine 
+    private boolean[][] moving; //array of flags indicating which player to move
     private ScoreBar score; //the scorebar
     private boolean paused; // is the game paused
 
