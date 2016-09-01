@@ -56,16 +56,17 @@ public class Ball {
         
         //bounces off the top of the playing field
         if(yLoc<5){
-            yLoc = 5+(5-yLoc);
+            yLoc = 10-yLoc;
             yVel = -yVel;
         }
         //bounces off the bottom of the playing field
         if(yLoc>495){
-            yLoc = 495-(yLoc-495);
+            yLoc = 990-(yLoc);
             yVel = -yVel;
         }
         //bounces off the right Paddle
-        if(xLoc<=20 && xLoc>5 && Math.abs(yLoc-right.getY())<50){
+        if(xLoc<=right.getX()+Player.WIDTH/2 && xLoc>right.getX()-Player.WIDTH/2
+                && Math.abs(yLoc-right.getY())<Player.LENGTH/2){
             xLoc=20+(20-xLoc);
             if(xLoc<20)
                 xLoc = 20;
@@ -73,7 +74,8 @@ public class Ball {
             accelerate();
         }
         //bounces off the left Paddle
-        if(xLoc>=475 && xLoc<485 && Math.abs(yLoc-left.getY())<50){
+        if(xLoc>=left.getX()-Player.WIDTH/2 && xLoc<left.getX()+Player.WIDTH/2
+                && Math.abs(yLoc-left.getY())<Player.LENGTH/2){
             xLoc=475-(xLoc-475);
             xVel=-xVel;
             accelerate();

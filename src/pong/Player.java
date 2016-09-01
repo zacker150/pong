@@ -13,7 +13,8 @@ public class Player {
     private int xloc; //x coordinate of center
     private int yloc; //y coordinate of center
     private Color c;
-    
+    public static final int LENGTH = 100;
+    public static final int WIDTH = 10;
     /**
      *
      * @param x The x coordinate of the center
@@ -33,7 +34,7 @@ public class Player {
      * @param g The graphics object to draw it on.
      */
     public void draw(Graphics2D g){
-        Rectangle r = new Rectangle(xloc,yloc-50,10,100);
+        Rectangle r = new Rectangle(xloc,yloc-50,WIDTH,LENGTH);
         Color old = g.getColor();
         //fills the inside
         g.setColor(c);
