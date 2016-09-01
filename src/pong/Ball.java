@@ -20,7 +20,7 @@ public class Ball {
     public Ball(int xl, int yl){
         xLoc = xl;
         yLoc = yl;
-        xVel = Math.random()*3;
+        xVel = (Math.random()-.5)*3;
         if(Math.abs(xVel)<2){
             if(xVel>0)
                 xVel+=2;
