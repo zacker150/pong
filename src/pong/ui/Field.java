@@ -55,6 +55,7 @@ public class Field extends JComponent implements Runnable {
     public ScoreBar getScoreBar(){
         return score;
     }
+    
     /**
      *resets the field for the next game.
      */
@@ -113,6 +114,7 @@ public class Field extends JComponent implements Runnable {
             }
         }
     }
+    
     /**
      * If the game is un-paused, pauses the game. 
      * If it is paused, un-pause the game. 
@@ -120,6 +122,7 @@ public class Field extends JComponent implements Runnable {
     public void changePausedSate(){
         paused = !paused;
     }
+    
     /**
      * @return true if the game is paused false if it isn't
      */
