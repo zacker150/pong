@@ -54,9 +54,9 @@ public class Pong extends JFrame{
         //shows the frame now that it's set up. 
         setVisible(true);
         //Pauses the game and dispays the instructions.
-        f.pause();
+        f.changePausedSate();
         int x = JOptionPane.showConfirmDialog(this, "Controls:\nW: Move player 1 up\nS:Move player 1 down\nUp:Move player 2 up\nDown:Move player 2 down");
-        f.pause(); //unpause
+        f.changePausedSate(); //unpause
         //starts the main loop of the game.
         Thread t = new Thread(f); 
         t.start();
@@ -76,9 +76,9 @@ class Pause implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            f.pause();
+            f.changePausedSate();
             //changes the text of the button.
-            if(f.paused())
+            if(f.isPaused())
                 button.setText("Unpause");
             else
                 button.setText("Pause");
