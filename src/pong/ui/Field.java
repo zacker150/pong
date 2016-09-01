@@ -25,7 +25,7 @@ public class Field extends JComponent implements Runnable {
     private Ball b; // I wonder what this is 
     private boolean[][] moving; //array to determine 
     private ScoreBar score; //the scorebar
-    private boolean paused; // is the gamie paused
+    private boolean paused; // is the game paused
 
     public Field(int x, int y) {
         int width = 500;
